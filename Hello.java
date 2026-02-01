@@ -189,5 +189,108 @@ public class Hello {
         // result = n%2 == 0 ? 10 : 20;
         // System.out.println(result);
         
+        
+        // Switch case
+
+        // int n = 8;
+        // if (n == 1)
+        //     System.out.println("Monday");
+        // else if (n == 2)
+        //     System.out.println("Tuesday");
+        // else if (n == 3)
+        //     System.out.println("Wednesday");
+        // else if (n == 4)
+        //     System.out.println("Thursday");
+        // else if (n == 5)
+        //     System.out.println("Friday");
+        // else if (n == 6)
+        //     System.out.println("Saturday");
+        // else if (n == 7)
+        //     System.out.println("Sunday");
+        // else
+        //     System.out.println("Enter Valid Number");
+
+        // switch (n) {
+        //     case 1:
+        //         System.out.println("Monday");
+        //         break;
+        //     case 2:
+        //         System.out.println("Tuesday");
+        //         break;
+        //     case 3:
+        //         System.out.println("Wednesday");
+        //         break;
+        //     case 4:
+        //         System.out.println("Thursday");
+        //         break;
+        //     case 5:
+        //         System.out.println("Friday");
+        //         break;
+        //     case 6:
+        //         System.out.println("Saturday");
+        //         break;
+        //     case 7:
+        //         System.out.println("Sunday");
+        //         break;
+        //     default:
+        //         System.out.println("Enter valid Number");
+        //         break;
+        // }
+
+
+        // LOOPS --> Repeatation
+        // LOOPS --> while, do while, for
+
+        // repeat 100 times, or on certain condition
+
+        // WHILE LOOP 
+        // Infinite Loop
+        // while (true) {
+        //     System.out.println("Hi");
+        // }
+
+        // int i = 1; // iterator
+        // while (i <= 5) {
+        //     System.out.println("Hi " + i);
+        //     i++;
+        // }
+        // int i = 1; // iterator
+        // while (i <= 5) {
+        //     int j = 1; // second iterator
+        //     System.out.println("Hi " + i);
+        //     while (j <= 3) {
+        //         System.out.println("Hello");
+        //         j++;
+        //     }
+        //     i++;
+        // }
+
+        // do while loop 
+        // You want to process 1 time even if you condition is false
+        // int i = 1;
+        // do {
+        //     System.out.println("Hi " + i);
+        //     i++;
+
+        // } while (i < 5);
+
+
+        // FOR LOOP 
+
+        // for(int i=1;i<5;i++ )
+        // {
+        //     System.out.println(i);
+        // }
+        // for(int i=5;i>0;i-- )
+        // {
+        //     System.out.println(i);
+        // }
+        // for(int i=1; i<=5; i++ )
+        // {
+        //     System.out.println("DAY " + i);
+        //     for(int j = 1; j<=9 ; j++){
+        //         System.out.println(" " + (j+8) + " - " + (j+9));
+        //     }  
+        // }
     }
 }
