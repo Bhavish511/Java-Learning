@@ -131,6 +131,63 @@ public class Hello {
         // System.out.println(result);
 
         // Logical operator
+
+        // & - AND Both true --> true, else false
+        // | - OR -> Any one true --> true, both false then false
+        // ! - NOT --> if true--> false and vice versa
+
+
+        //  &&   || and !
+
+
+        // int x = 4;
+        // int y = 5;
+        // int z = 7;
+        // int a = 2;
+        // // boolean result = y > x && a > z;
+        // // System.out.println(result);; // false
+        // // boolean result = y > x || a > z; 
+        // // System.out.println(result);; // true
+        // boolean result = y > x || a > z; 
+        // System.out.println(!result);; // true then ! becomes false
+        
+
+        // Conditional Statements
+
+        // int x = 18;
+        // if (x > 10 && x <= 20) // 11 - 20
+        // {
+        //     System.out.println("Hello");
+        // } else{
+        //     System.out.println("Bye");
+        // }
+
+        // int x = 5;
+        // int y = 7;
+        // int z = 10;
+
+        // if( x > y && x > z ){
+        //     System.out.println(x);
+        // }else if(y > x && y > z){
+        //     System.out.println(y);
+        // }else {
+        //     System.out.println(z);
+        // }
+
+        // Ternary operators
+
+        // int n = 4;
+        // int m = 7;
+        // int result = 0;
+        // if(n%2 == 0){
+        //     result = 10;
+        // }else{
+        //     result = 20;
+        // }
+        // System.out.println(result);
+        
+        // result = n%2 == 0 ? 10 : 20;
+        // System.out.println(result);
         
     }
 }
