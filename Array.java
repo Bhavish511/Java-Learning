@@ -1,3 +1,10 @@
+class Student {
+    int rollno;
+    String name;
+    int marks;
+
+    
+}
 public class Array {
     /**
      * @param args
@@ -136,8 +143,44 @@ public class Array {
 
 
 
-        // Drawbacks of array
+        // int arrs[] =  new int[6];
+        // arrs[0] = 4;
+        // arrs[1] = 8;
+        // arrs[2] = 3;
+        // arrs[3] = 7;
 
-        int arrs[] new int[3];
+        // for(int m:arrs){
+        //     System.out.println(m);
+        // }
+
+        // object 1
+        Student stdobj = new Student();
+        stdobj.rollno = 1;
+        stdobj.name = "Bhavish";
+        stdobj.marks = 50;
+        // object 2
+        Student stdobj1 = new Student();
+        stdobj1.rollno = 2;
+        stdobj1.name = "Qasim";
+        stdobj1.marks = 60;
+        // object 3
+        Student stdobj2 = new Student();
+        stdobj2.rollno = 3;
+        stdobj2.name = "Sunny";
+        stdobj2.marks = 70;
+        // object 4
+        Student stdobj3 = new Student();
+        stdobj3.rollno = 4;
+        stdobj3.name = "Omesh";
+        stdobj3.marks = 80;
+
+
+        Student students[] = new Student[4];
+        students[0]= stdobj;
+        students[1]= stdobj1;
+        students[2]= stdobj2;
+        students[3]= stdobj3;
+        
+
     }
 }
