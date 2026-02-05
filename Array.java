@@ -174,13 +174,34 @@ public class Array {
         stdobj3.name = "Omesh";
         stdobj3.marks = 80;
 
-
+        // 
+        // System.out.println(stdobj1);
+        // It prints the address of the object not the values of the object
         Student students[] = new Student[4];
         students[0]= stdobj;
         students[1]= stdobj1;
         students[2]= stdobj2;
         students[3]= stdobj3;
         
+        // for (int i = 0; i < students.length; i++) {
+        //     System.out.println(students[i].name + " : " + students[i].marks);
+        // }
 
+        // for Enhanced for loop 
+
+        for (Student student : students) {
+            System.out.println(student.name + ":" + student.marks);
+        }
+
+
+        int arr[] = new int[4];
+        arr[0] = 1;
+        arr[1] = 4;
+        arr[2] = 5;
+        arr[3] = 6;
+
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
 }
