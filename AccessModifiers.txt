@@ -1,0 +1,49 @@
+Something you want to access outside the package make it public
+Inside the same package the things are accessible private or public
+but if you want to acces it outside the package you should make it public
+
+Private--->
+private variable or method are accessible inside the class
+irrespective to the package
+
+Deafult--> No mention any access modifier it is Deafult
+It access in same package
+
+
+Projected----> it can be access to it's sub-class and class it self
+And also access in same package
+and a class in other package and it is sub-class them the protected are accessible to that class.
+
+
+
+
+
+============================
+
+--> Try to make your classes public
+--> Try to keep variable/ instance variable private, access to setter/getter
+--> Methods most of the time are public where required
+--> If variables are accessed to sub-class them make them protected
+--> Avoid using the Deafult type of access modifier
+
+
+
+
+
+
+
+                            public      Private        Deafult          Protected
+
+same class              |     YES    |    Yes     |     Yes       |      Yes        |
+                        |            |            |               |                 |
+same package            |     YES    |    No      |     Yes       |      Yes        |
+subclass                |            |            |               |                 |
+                        |            |            |               |                 |
+same package            |     YES    |    No      |     Yes       |      Yes        |
+non-subclass            |            |            |               |                 |
+                        |            |            |               |                 |
+different package       |     YES    |    No      |      No       |      Yes        |
+subclass                |            |            |               |                 |
+                        |            |            |               |                 |
+different package       |     YES    |    No      |      No       |       No        |
+non-subclass            |            |            |               |                 |

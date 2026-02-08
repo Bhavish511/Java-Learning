@@ -7,7 +7,7 @@
 class Human{
 
     // access modifiers
-    private int age=11;
+    // private int age=11;
     // private String name="Bhavish";
 
 
