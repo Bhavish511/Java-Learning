@@ -40,6 +40,7 @@ public class NeedInterfaces {
         Computer BhavishDesktop = new Desktop();
         Developer bhavish = new Developer();
         bhavish.devApp(BhavishLaptop);
+        bhavish.devApp(BhavishDesktop);
         // bhavish.devApp(BhavishDesktop); // we can't provide desktop because it needs laptop
 
     }   

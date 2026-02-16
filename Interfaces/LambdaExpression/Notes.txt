@@ -1,0 +1,3 @@
+The lambda expression only use with the functional Interfaces,
+The functional interface had only the one function,
+Is only allow to use with functional Interfaces

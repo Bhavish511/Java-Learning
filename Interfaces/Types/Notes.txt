@@ -1,0 +1,25 @@
+Types
+
+Normal Interfaces -->
+--> Only declares till java8
+--> contain multiple methods
+
+
+Functional Interfaces --> Also called SAM (Single Abstract Method)-->
+--> only has on methods.
+
+Marker Interfaces -->
+--> which has no methods
+--> Update something to compiler like to allow something
+For example:
+Serialization--> Is the concept to store the state or store or save the object on the drive,
+and want again that so we can get.
+
+Like--> we are playing the game and want to save the stats,
+so we save the stats,
+
+and after restart the values are zero's and now we can used the stored the object to get the same stats
+
+--> again getting the object is called de-Serialization.
+
+-> Every object doesn't not allow the de-Serialization, we have to give the permissions. by the help of marker interface.

@@ -1,0 +1,4 @@
+Annotations-->
+--> It means suppliment to the compiler or to the runtime,
+--> Also it is called the meta data.
+--> it send some extra info to the compiler or runtime for the code.
