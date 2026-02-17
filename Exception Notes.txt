@@ -1,0 +1,21 @@
+Object --> THrowable 
+
+
+// WE Don't handle these
+1) Error --> Stops the execution
+    i)   Thread_Death-->
+    ii)  IO Errors (Input/Output Errors)
+    iii) Virtual machine Error
+        --> OutOfMomory error
+
+WE Handle the Exceptions
+2) Exceptions--> Interrupts the execution
+    Unchecked Exceptions
+    i)   RunTime Exceptions
+        1) Arthematic Exceptions
+        2) ArrayIndexOutOfBound Exceptions
+        3) Null Pointer Exceptions
+    
+    Checked Exceptions--> Compulsory to handle --> can cause
+    ii)  SQL Exceptions
+    iii) IO Exceptions

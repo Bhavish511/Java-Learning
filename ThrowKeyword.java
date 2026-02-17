@@ -5,7 +5,7 @@
 ///     Runtime errors are the exceptions and we have to handle the exception
 /// 3) logical error: Everything work fine but output is wrong
 
-public class Exceptions {
+public class ThrowKeyword {
     public static void main(String[] args) {
         
         // int i =0;
@@ -14,24 +14,20 @@ public class Exceptions {
 
         // Handling the exception
 
-        int n = 2;
+        int n = 0;
         int m = 0;
-        String str = null;
-        int[] nums = new int[5];
         try {
             m = 18/n;
-            System.out.println(nums[1]);
-            System.out.println(nums[3]);
-            // System.out.println(str.length());
+            if(m==0)
+                throw new ArithmeticException("I don't want to print the zero.");
         } catch (ArithmeticException e) { // Arthematic
-            // TODO: handle exception
-            // if(e)
-            System.out.println("Cannot divide by zero.");
-        }catch(ArrayIndexOutOfBoundsException e){ // ArrayIndexOutBounds exceptions
-            System.out.println("Cannot fetch value stay in limit");
+            m = 18/1;
+            System.out.println("Cannot divide by zero. "+e);
         }
         catch(Exception e){ // General exceptions
             System.out.println("Something went wrong.. " + e);
         }
+        System.out.println(m);
+        System.out.println("Bye..");
     }
 }
