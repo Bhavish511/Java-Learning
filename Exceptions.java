@@ -16,7 +16,7 @@ public class Exceptions {
 
         int n = 2;
         int m = 0;
-        String str = null;
+        // String str = null;
         int[] nums = new int[5];
         try {
             m = 18/n;
@@ -24,7 +24,6 @@ public class Exceptions {
             System.out.println(nums[3]);
             // System.out.println(str.length());
         } catch (ArithmeticException e) { // Arthematic
-            // TODO: handle exception
             // if(e)
             System.out.println("Cannot divide by zero.");
         }catch(ArrayIndexOutOfBoundsException e){ // ArrayIndexOutBounds exceptions
@@ -33,5 +32,6 @@ public class Exceptions {
         catch(Exception e){ // General exceptions
             System.out.println("Something went wrong.. " + e);
         }
+        System.out.println(m);
     }
 }
