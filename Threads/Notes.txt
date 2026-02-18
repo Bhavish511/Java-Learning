@@ -1,2 +1,11 @@
 Multiple thread running in same program
 Multi-Threading
+
+
+1) Threads
+
+2) Mutation --> changing
+
+Mutation with Threads
+
+Thread Safe-> Only one thread will work at a point
