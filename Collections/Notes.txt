@@ -1,0 +1,20 @@
+Collection API-------------->
+    -Map
+Collection (Interface)------>
+    Collection implements the Iterable( Interface)
+    ->Collection is whenever you want to group the elements
+
+    List--> ArrayList, Linkedlist,
+        --> It supports index value
+    Queue-->DeQueue,
+    Set -->Hashset,Linked Hashset,
+        --> Can't have index value and indexes
+ --> Implements the Collection.
+     
+
+Collections (class) -------->
+
+
+Map --> is the key value pair data structure
+
+We achieve Map with the combination of list and set.
