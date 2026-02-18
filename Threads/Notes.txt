@@ -9,3 +9,13 @@ Multi-Threading
 Mutation with Threads
 
 Thread Safe-> Only one thread will work at a point
+
+
+Thread States:
+1)New --> Start()--> go to Runnable state, 
+2)Ruunable, run()--> go to Running state --> Thread wait for the schedullar
+    if we call Stop() --> go to Dead state.
+3)Runing, Sleep() or wait()--> go to Waiting state --> This state means actually thread on the cpu.
+    if we call Stop() --> go to Dead state.
+4)Waiting,-->  if thread in waiting--> Notifiy() -> the thread go to Runnable
+Dead
