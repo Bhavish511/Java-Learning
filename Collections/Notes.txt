@@ -18,3 +18,10 @@ Collections (class) -------->
 Map --> is the key value pair data structure
 
 We achieve Map with the combination of list and set.
+
+
+HashMap --> In this we have to implement synchronization explicitly
+
+But in
+
+HashTable -> In-build had in-build synchronization
