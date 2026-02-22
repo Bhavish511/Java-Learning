@@ -1,0 +1,11 @@
+Steps:
+
+one we have jar file,
+
+1) Import packages -> java.sql
+2) Load the drivers
+3) Register the drivers
+4) Create Connection
+5) Create Statement
+6) Execute Statement
+7) Close the connection
