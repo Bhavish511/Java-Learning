@@ -1,17 +1,26 @@
 package com.Bhavish;
 
 import jakarta.persistence.*;
-
 @Entity()
-@Table(name = "alien_table")
+//@Table(name = "alien_table")
 public class Alien {
 
     @Id
     private int aid;
     private String aname;
-    @Column(name = "Alien_name")
-    @Transient // Don't want to store in the database
+//    @Column(name = "Alien_name")
+//    @Transient // Don't want to store in the database
     private String tech;
+    @OneToOne
+    private Laptop laptop;
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
 
     public int getAid() {
         return aid;
@@ -43,6 +52,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }

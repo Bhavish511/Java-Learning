@@ -61,12 +61,19 @@ public class Main {
 //        session3.close();
 //        sf.close();
 
+        Laptop l1 = new Laptop();
+        l1.setLid(1);
+        l1.setBrand("Asus");
+        l1.setRam(16);
+        l1.setModel("Rog");
         Alien a1 = new Alien();
         a1.setAid(101);
         a1.setAname("Bhavish");
         a1.setTech("Java");
+        a1.setLaptop(l1);
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.Bhavish.Alien.class)
+                .addAnnotatedClass(com.Bhavish.Laptop.class)
                 .configure()
                 .buildSessionFactory();
 
@@ -74,7 +81,11 @@ public class Main {
 
         Transaction ATrac = Asession.beginTransaction();
         Asession.persist(a1);
+        Asession.persist(l1);
         ATrac.commit();
+
+        Alien A2 = Asession.get(Alien.class,101);
+        System.out.println("Fetched Data: "+ A2);
         Asession.close();
         sf.close();
     }
