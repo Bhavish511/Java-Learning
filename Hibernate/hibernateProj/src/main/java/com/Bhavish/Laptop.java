@@ -2,6 +2,8 @@ package com.Bhavish;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Laptop {
 
@@ -10,14 +12,14 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToOne
-    private Alien alien;
+    @ManyToMany(mappedBy = "laptop")
+    private List<Alien> alien;
 
-    public Alien getAlien() {
+    public List<Alien> getAlien() {
         return alien;
     }
 
-    public void setAlien(Alien alien) {
+    public void setAlien(List<Alien> alien) {
         this.alien = alien;
     }
 
@@ -60,6 +62,7 @@ public class Laptop {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", ram=" + ram +
+                ", alien=" + alien +
                 '}';
     }
 }
