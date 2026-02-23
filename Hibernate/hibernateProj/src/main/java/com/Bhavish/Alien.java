@@ -14,7 +14,7 @@ public class Alien {
 //    @Column(name = "Alien_name")
 //    @Transient // Don't want to store in the database
     private String tech;
-    @OneToMany
+    @OneToMany(mappedBy = "alien")
     private List<Laptop> laptop;
 
     public List<Laptop> getLaptop() {
