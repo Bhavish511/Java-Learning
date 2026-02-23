@@ -4,9 +4,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -64,70 +65,99 @@ public class Main {
 //        session3.close();
 //        sf.close();
 
-        Laptop l1 = new Laptop();
-        l1.setLid(1);
-        l1.setBrand("Asus");
-        l1.setRam(16);
-        l1.setModel("Rog");
-
-        Laptop l2 = new Laptop();
-        l2.setLid(2);
-        l2.setBrand("Hp");
-        l2.setRam(16);
-        l2.setModel("Core i7");
-
-        Laptop l3 = new Laptop();
-        l3.setLid(3);
-        l3.setBrand("Dell");
-        l3.setRam(32);
-        l3.setModel("XPS");
-
-        Alien a1 = new Alien();
-        a1.setAid(101);
-        a1.setAname("Bhavish");
-        a1.setTech("Java");
-
-        Alien a2 = new Alien();
-        a2.setAid(102);
-        a2.setAname("Sunny");
-        a2.setTech("Node");
-
+//        Laptop l1 = new Laptop();
+//        l1.setLid(1);
+//        l1.setBrand("Asus");
+//        l1.setRam(16);
+//        l1.setModel("Rog");
+//
+//        Laptop l2 = new Laptop();
+//        l2.setLid(2);
+//        l2.setBrand("Hp");
+//        l2.setRam(16);
+//        l2.setModel("Core i7");
+//
+//        Laptop l3 = new Laptop();
+//        l3.setLid(3);
+//        l3.setBrand("Dell");
+//        l3.setRam(32);
+//        l3.setModel("XPS");
+//
+//        Alien a1 = new Alien();
+//        a1.setAid(101);
+//        a1.setAname("Bhavish");
+//        a1.setTech("Java");
+//
+//        Alien a2 = new Alien();
+//        a2.setAid(102);
+//        a2.setAname("Sunny");
+//        a2.setTech("Node");
+//
 //        Alien a3 = new Alien();
 //        a3.setAid(103);
 //        a3.setAname("Qasim");
 //        a3.setTech("Python");
-
-        a1.setLaptop(Arrays.asList(l1,l2));
-        a2.setLaptop(Arrays.asList(l3));
+//
+//        a1.setLaptop(Arrays.asList(l1,l2));
+//        a2.setLaptop(Arrays.asList(l3));
 //        a3.setLaptop(Arrays.asList(l3));
+//
+//        SessionFactory sf = new Configuration()
+//                .addAnnotatedClass(com.Bhavish.Alien.class)
+//                .addAnnotatedClass(com.Bhavish.Laptop.class)
+//                .configure()
+//                .buildSessionFactory();
+//
+//        Session Asession = sf.openSession();
+//
+//        Transaction ATrac = Asession.beginTransaction();
+//        Asession.persist(a1);
+//        Asession.persist(a2);
+//        Asession.persist(a3);
+//        Asession.persist(l1);
+//        Asession.persist(l2);
+//        Asession.persist(l3);
+//
+//        ATrac.commit();
+//
+//        Alien A5 = Asession.get(Alien.class,101);
+//        System.out.println("Fetched Data: "+ A5);
+//        Asession.close();
 
+//        Session session0 = sf.openSession();
+//        Alien A5 = session0.get(Alien.class,101);
+//        System.out.println( A5);
+
+//        session0.close();
+//        sf.close();
+
+//        HQL
+//        Laptop l4 = new Laptop();
+//        l4.setLid(4);
+//        l4.setBrand("Asus");
+//        l4.setRam(32);
+//        l4.setModel("Strix");
         SessionFactory sf = new Configuration()
-                .addAnnotatedClass(com.Bhavish.Alien.class)
                 .addAnnotatedClass(com.Bhavish.Laptop.class)
                 .configure()
                 .buildSessionFactory();
 
-        Session Asession = sf.openSession();
+        Session s1 = sf.openSession();
+//        Transaction trans1 = s1.beginTransaction();
+//
+////        s1.persist(l4);
+//        trans1.commit();
+//        select * from Laptop wehre ram=32 -->SQL
+//        From Laptop where ram-32;
 
-        Transaction ATrac = Asession.beginTransaction();
-        Asession.persist(a1);
-        Asession.persist(a2);
-//        Asession.persist(a3);
-        Asession.persist(l1);
-        Asession.persist(l2);
-        Asession.persist(l3);
+//        Query query = s1.createQuery("from Laptop"); // Return all the laptops
+        Query query = s1.createQuery("from Laptop where ram=32");
 
-        ATrac.commit();
-
-//        Alien A5 = Asession.get(Alien.class,101);
-//        System.out.println("Fetched Data: "+ A5);
-        Asession.close();
-
-        Session session0 = sf.openSession();
-        Alien A5 = session0.get(Alien.class,101);
-        System.out.println( A5);
-
-        session0.close();
+        List<Laptop> laptops  = query.getResultList();
+//        Laptop l6 = s1.get(Laptop.class, 3);
+//        System.out.println(l6);
+        System.out.println(laptops);
+        s1.close();
         sf.close();
     }
 }
