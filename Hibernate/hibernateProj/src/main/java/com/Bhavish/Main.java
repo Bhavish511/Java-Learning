@@ -92,18 +92,15 @@ public class Main {
         a2.setAname("Sunny");
         a2.setTech("Node");
 
-        Alien a3 = new Alien();
-        a3.setAid(103);
-        a3.setAname("Qasim");
-        a3.setTech("Python");
+//        Alien a3 = new Alien();
+//        a3.setAid(103);
+//        a3.setAname("Qasim");
+//        a3.setTech("Python");
 
         a1.setLaptop(Arrays.asList(l1,l2));
-        a2.setLaptop(Arrays.asList(l2,l3));
-        a3.setLaptop(Arrays.asList(l1));
+        a2.setLaptop(Arrays.asList(l3));
+//        a3.setLaptop(Arrays.asList(l3));
 
-        l1.setAlien(Arrays.asList(a1,a3));
-        l2.setAlien(Arrays.asList(a1,a2));
-        l3.setAlien(Arrays.asList(a2));
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.Bhavish.Alien.class)
                 .addAnnotatedClass(com.Bhavish.Laptop.class)
@@ -115,16 +112,22 @@ public class Main {
         Transaction ATrac = Asession.beginTransaction();
         Asession.persist(a1);
         Asession.persist(a2);
-        Asession.persist(a3);
+//        Asession.persist(a3);
         Asession.persist(l1);
         Asession.persist(l2);
         Asession.persist(l3);
 
         ATrac.commit();
 
-        Alien A5 = Asession.get(Alien.class,102);
-        System.out.println("Fetched Data: "+ A5);
+//        Alien A5 = Asession.get(Alien.class,101);
+//        System.out.println("Fetched Data: "+ A5);
         Asession.close();
+
+        Session session0 = sf.openSession();
+        Alien A5 = session0.get(Alien.class,101);
+        System.out.println( A5);
+
+        session0.close();
         sf.close();
     }
 }

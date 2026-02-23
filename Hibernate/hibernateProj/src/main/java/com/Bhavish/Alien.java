@@ -14,15 +14,15 @@ public class Alien {
 //    @Column(name = "Alien_name")
 //    @Transient // Don't want to store in the database
     private String tech;
-    @ManyToMany
-    private List<Laptop> laptop;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Laptop> laptops;
 
     public List<Laptop> getLaptop() {
-        return laptop;
+        return laptops;
     }
 
-    public void setLaptop(List<Laptop> laptop) {
-        this.laptop = laptop;
+    public void setLaptop(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     public int getAid() {

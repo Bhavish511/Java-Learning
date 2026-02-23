@@ -12,16 +12,6 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToMany(mappedBy = "laptop")
-    private List<Alien> alien;
-
-    public List<Alien> getAlien() {
-        return alien;
-    }
-
-    public void setAlien(List<Alien> alien) {
-        this.alien = alien;
-    }
 
     public int getLid() {
         return lid;
@@ -62,7 +52,6 @@ public class Laptop {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", ram=" + ram +
-                ", alien=" + alien +
                 '}';
     }
 }
