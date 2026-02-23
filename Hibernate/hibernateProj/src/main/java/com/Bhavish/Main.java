@@ -154,7 +154,7 @@ public class Main {
 //        Query query = s1.createQuery("from Laptop where ram=32");
 //        Query query = s1.createQuery("from Laptop where brand like 'Asus'");
 //        String brand = "Asus";
-        String brand = "Dell";
+//        String brand = "Dell";
 
 //        Query query = s1.createQuery("from Laptop where brand like ?1");
 //        query.setParameter(1,brand);
@@ -162,16 +162,47 @@ public class Main {
 //        Query query = s1.createQuery("select model from Laptop where brand like ?1");
 //        query.setParameter(1,brand);
 //        List<String> laptops  = query.getResultList();
-        Query query = s1.createQuery("select brand, model from Laptop where brand like ?1");
-        query.setParameter(1,brand);
-        List<Object[]> laptops  = query.getResultList();
-        for(Object[] data : laptops){
-            System.out.println((String)data[0] +" : "+ (String) data[1]);
-        }
+//        Query query = s1.createQuery("select brand, model from Laptop where brand like ?1");
+//        query.setParameter(1,brand);
+//        List<Object[]> laptops  = query.getResultList();
+//        for(Object[] data : laptops){
+//            System.out.println((String)data[0] +" : "+ (String) data[1]);
+//        }
 //        Laptop l6 = s1.get(Laptop.class, 3);
 //        System.out.println(l6);
 //        System.out.println(laptops);
-        s1.close();
+//        s1.close();
+//        sf.close();
+
+
+//        Get and Load ( Lazy and Eager fetching)
+//
+//        Session sess = sf.openSession();
+////        Laptop laptp = sess.get(Laptop.class,2);
+////        Laptop laptp = sess.load(Laptop.class,2);
+//        //Lazy loading
+//        Laptop laptp = sess.byId(Laptop.class).getReference(2);
+//
+////        System.out.println(laptp);
+//
+//        sess.close();
+//        sf.close();
+
+//        L2 Cache Ehcache
+        Session session12 = sf.openSession();
+
+        Laptop l1 = session12.get(Laptop.class,2);
+        System.out.println(l1);
+
+        session12.close();
+
+        Session session13 = sf.openSession();
+
+        Laptop l2 = session13.get(Laptop.class,2);
+        System.out.println(l2);
+        session13.close();
         sf.close();
+
+
     }
 }
