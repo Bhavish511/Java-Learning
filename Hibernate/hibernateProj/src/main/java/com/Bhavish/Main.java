@@ -5,6 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 //        Student s1 = new Student();
@@ -66,11 +69,18 @@ public class Main {
         l1.setBrand("Asus");
         l1.setRam(16);
         l1.setModel("Rog");
+
+        Laptop l2 = new Laptop();
+        l2.setLid(2);
+        l2.setBrand("Hp");
+        l2.setRam(16);
+        l2.setModel("Core i7");
+
         Alien a1 = new Alien();
         a1.setAid(101);
         a1.setAname("Bhavish");
         a1.setTech("Java");
-        a1.setLaptop(l1);
+        a1.setLaptop(Arrays.asList(l1,l2));
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.Bhavish.Alien.class)
                 .addAnnotatedClass(com.Bhavish.Laptop.class)
@@ -82,6 +92,8 @@ public class Main {
         Transaction ATrac = Asession.beginTransaction();
         Asession.persist(a1);
         Asession.persist(l1);
+        Asession.persist(l2);
+
         ATrac.commit();
 
         Alien A2 = Asession.get(Alien.class,101);
