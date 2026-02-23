@@ -151,12 +151,26 @@ public class Main {
 //        From Laptop where ram-32;
 
 //        Query query = s1.createQuery("from Laptop"); // Return all the laptops
-        Query query = s1.createQuery("from Laptop where ram=32");
+//        Query query = s1.createQuery("from Laptop where ram=32");
+//        Query query = s1.createQuery("from Laptop where brand like 'Asus'");
+//        String brand = "Asus";
+        String brand = "Dell";
 
-        List<Laptop> laptops  = query.getResultList();
+//        Query query = s1.createQuery("from Laptop where brand like ?1");
+//        query.setParameter(1,brand);
+//        List<Laptop> laptops  = query.getResultList();
+//        Query query = s1.createQuery("select model from Laptop where brand like ?1");
+//        query.setParameter(1,brand);
+//        List<String> laptops  = query.getResultList();
+        Query query = s1.createQuery("select brand, model from Laptop where brand like ?1");
+        query.setParameter(1,brand);
+        List<Object[]> laptops  = query.getResultList();
+        for(Object[] data : laptops){
+            System.out.println((String)data[0] +" : "+ (String) data[1]);
+        }
 //        Laptop l6 = s1.get(Laptop.class, 3);
 //        System.out.println(l6);
-        System.out.println(laptops);
+//        System.out.println(laptops);
         s1.close();
         sf.close();
     }
