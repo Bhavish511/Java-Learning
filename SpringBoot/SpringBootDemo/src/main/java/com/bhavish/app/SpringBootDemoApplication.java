@@ -11,9 +11,11 @@ public class SpringBootDemoApplication {
 		ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
 		Alein obj = context.getBean(Alein.class);
 		obj.code();
-
-		Alein obj1 = context.getBean(Alein.class);
-		obj.code();
+//
+//		Laptop lap = context.getBean(Laptop.class);
+//		lap.compile();
+//		Alein obj1 = context.getBean(Alein.class);
+//		obj.code();
 	}
 
 }
