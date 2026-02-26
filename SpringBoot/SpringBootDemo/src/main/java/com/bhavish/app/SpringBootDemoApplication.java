@@ -2,12 +2,18 @@ package com.bhavish.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class SpringBootDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoApplication.class, args);
+		ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
+		Alein obj = context.getBean(Alein.class);
+		obj.code();
+
+		Alein obj1 = context.getBean(Alein.class);
+		obj.code();
 	}
 
 }
