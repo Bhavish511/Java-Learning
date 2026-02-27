@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    By default the scope type is singleton which use  the same reference on every call-->
+<!--    <bean id="alien" class="com.bhavish.Alein" scope="prototype">  This will create new on every getbean called-->
+    <bean id="alien" class="com.bhavish.Alein">
+<!--            <bean id="alien" class="com.bhavish.Alein autowire="">  autowire values are
+we use this as we are not defining the property explicitly.
+or you want that it handle by the spring framework to match the property through above defined methods
+->byName -> search for the same name objects
+-> byType -> search for the object of same type
+->
+-->
+<!--        <constructor-arg  value="25"/>-->
+<!--        <constructor-arg ref="lap1"/>-->
+
+<!--        <constructor-arg index="1" ref="lap1"/>-->
+<!--        <constructor-arg  index="0" value="25"/>-->
+
+<!--        <constructor-arg type="com.bhavish.Laptop" value="25"/>-->
+<!--        <constructor-arg type="int" ref="lap1"/>-->
+
+<!--        <constructor-arg name="lap" value="25"/>-->
+<!--        <constructor-arg name="age" ref="lap1"/>-->
+
+        <constructor-arg name="age" value="25"/>
+        <constructor-arg name="com" ref="desk1"/>
+
+<!--        <property name="age" value="21"></property>-->
+<!--        <property name="lap" ref="lap1"></property>-->
+
+<!--        This is the inner bean, desktop class only for ALien-->
+    <property name="com">
+        <bean id="desk1" class="com.bhavish.Desktop" lazy-init="true">
+        </bean>
+    </property>
+    </bean>
+    <bean id="lap1" class="com.bhavish.Laptop" primary="true">
+<!--        primary="true": This is the most important part of your snippet. It solves the "NoUniqueBeanDefinitionException".
+If you have multiple beans of the same type (e.g., lap1, lap2, and lap3 all belonging to the Laptop class), and another class tries to @Autowired a Laptop, Spring won't know which one to pick.
+By setting primary="true", you are telling Spring: "If there is any ambiguity, use this bean as the default choice." -->
+    </bean>
+<!--    <bean id="desk1" class="com.bhavish.Desktop" lazy-init="true">-->
+<!--    </bean>-->
+<!--    Lazy-init creates the object we called else not created-->
+<!--    If we have non-lazy-bean, and it is dependent on lazy-bean still it will create the object of a lazy-bean, becausse someone wants it-->
+<!-- We can make the bean as lazy(load or create the object when it called) unless singleton -->
+<!--    Why we need lazy-bean -> as we have hundred of beans and if you make everyone as non-lazy by default which is non-lazy
+or you say eager, when you are loading the application, it will create the all those hundred beans-->
+</beans>
+
