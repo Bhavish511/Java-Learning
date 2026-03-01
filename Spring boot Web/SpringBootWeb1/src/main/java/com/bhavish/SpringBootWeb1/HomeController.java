@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,6 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
+    @ModelAttribute("course")
+    public String courseName(){
+        return "Java";
+    }
     @RequestMapping("/")
     public String home(){
         System.out.println("Home method called");
@@ -63,6 +68,38 @@ public class HomeController {
 //        return "result.jsp";
 //        return "result";
         return mv;
+
+    }
+//    @RequestMapping("addAlien")
+//    public ModelAndView addAlien(@RequestParam("aid") int aid, @RequestParam("aname") String aname, ModelAndView mv){
+//
+//        Alien alien = new Alien();
+//        alien.setAid(aid);
+//        alien.setAname(aname);
+//        mv.addObject("alien",alien);
+//        mv.setViewName("result");
+//
+//        System.out.println("Called Add");
+//        return mv;
+//
+//    }
+
+    // ABove using ModelAttribute
+    @RequestMapping("addAlien")
+    // ModelAttribute is Optional, It is something that comes behind the scene, It is responsible to add your data to the model object
+    // If you want give the different name then you can use ModelAttribute like:
+//    public String addAlien(@ModelAttribute("alien1") Alien alien) --> you want alien1 object name
+    public String addAlien(Alien alien){
+
+//        Alien alien = new Alien();
+//        alien.setAid(aid);
+//        alien.setAname(aname);
+//        mv.addObject("alien",alien);
+//        mv.setViewName("result");
+//
+//        System.out.println("Called Add");
+//        return mv;
+        return "result";
 
     }
 }
