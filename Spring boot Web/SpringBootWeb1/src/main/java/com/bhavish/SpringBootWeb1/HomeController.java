@@ -15,8 +15,10 @@ public class HomeController {
     @RequestMapping("/")
     public String home(){
         System.out.println("Home method called");
-        return "index.jsp";
-        
+//        return "index.jsp";
+        return "index";
+
+
     }
 //    @RequestMapping("add")
 //    public String add(HttpServletRequest req, HttpSession session){
@@ -55,6 +57,8 @@ public class HomeController {
 //        session.setAttribute("result",result);
         //        System.out.println(result);
         System.out.println("Called Add");
-        return "result.jsp";
+//        return "result.jsp";
+        return "result";
+
     }
 }
